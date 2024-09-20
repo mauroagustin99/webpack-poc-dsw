@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: url('./woman-taking-marinated-beef-served-with-onion-sumac-herbs.jpg')
+    no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: rgb(46, 44, 44);
+  overflow: auto;
+}
+
+/*Overlay para el background*/
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+header {
+  background-color: #a52a2a;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.nav-btn {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #6a5acd;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reservas {
+  background-color: #2ecc71;
+}
+
+.active {
+  background-color: #6a5acd;
+}
+
+#content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  margin: 25px auto;
+  padding: 20px;
+  width: 70%;
+  text-align: center;
+}
+
+#content > ul > li {
+  list-style-type: none;
+}
+
+footer {
+  background-color: #a52a2a;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  margin-top: auto;
+  bottom: 0;
+  width: 100%;
+  flex-shrink: 0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+footer a {
+  color: #fff5e1;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
