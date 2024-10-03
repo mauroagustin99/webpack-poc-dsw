@@ -1,8 +1,13 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); //Limpia la carpeta dist antes de cada compilacion
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
 
-module.exports = {
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+const smp = new SpeedMeasurePlugin();
+
+module.exports = smp.wrap({
   mode: 'development',
   entry: './src/index.js',
   output: {
@@ -29,6 +34,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new BundleAnalyzerPlugin({
+      generateStatsFile: true,
+      reportFilename: 'bundle-report.html',
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       // Template HTML
@@ -40,4 +49,4 @@ module.exports = {
   optimization: {
     runtimeChunk: 'single',
   },
-};
+});
